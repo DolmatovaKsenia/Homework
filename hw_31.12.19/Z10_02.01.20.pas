@@ -5,12 +5,14 @@
 //–1, если x принадлежит [1, 2), [3, 4), … .
 
 var
-  x, f: integer;
+  x: real;
   
 begin
   readln(x);
-  if x < 0 then write('0');
-  if x mod 2 = 0 then write('1')
+  if x < 0 then 
+    write('0');
+  if ((x < Round(x)) and (Round(x) mod 2 = 1)) or ((x > Round(x)) and (Round(x) mod 2 = 0)) then 
+    write('1')
   else
-  write('-1');
+    write('-1');
 end.
