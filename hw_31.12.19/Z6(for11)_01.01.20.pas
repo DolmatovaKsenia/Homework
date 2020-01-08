@@ -6,7 +6,7 @@ var
 begin
   readln(N);
   sum := 0;
-  for var i := 1 to N do
+  for var i := 0 to N do
   begin
     sum := sum + sqr(N + i)
   end;

@@ -8,7 +8,7 @@ begin
   
   for var i := A to B do
   begin
-    count := i + 1;
+    count := count + 1;
     writeln(i);
   end;
   writeln(count)

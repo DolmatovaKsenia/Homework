@@ -1,14 +1,14 @@
-﻿//Даны два целых числа A и B (A < B). Найти произведение всех целых чисел от A до B включительно.
+﻿// Даны два целых числа A и B (A < B). Найти произведение всех целых чисел от A до B включительно.
 
 var
-  A, B, count: integer;
+  A, B, product: integer;
   
 begin
   readln(A, B);
-  count := 1;
+  product := 1;
   for var i := A to B do
   begin
-    count := count * i
+    product := product * i
   end;
-  writeln(count)
+  writeln(product)
 end.

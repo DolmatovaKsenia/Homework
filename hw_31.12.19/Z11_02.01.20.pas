@@ -8,35 +8,24 @@ var
   number: integer;
   x, r, d, l, s: real;
 begin
-  readln(number)
-  readln(x)
+  readln(number);
+  readln(x); // x - радиус
   case number of
     1: begin
      r := x;
-     d := 2 * r;
-     l := 2 * 3.14 * r;
-     S := 3.14 * sqr(r);
-     writeln(d, l, s);
+     writeln(r);
     end;
     2: begin
-     r := x / 2;
-     d := x;
-     l := 2 * 3.14 * r;
-     s := 3.14 * sqr(r);
-     writeln(r, l, s);
+     d := 2 * x;
+     writeln(d);
     end;
     3: begin
-      r := x / 2 * 3.14;
-      d := 2 * r;
-      l := x;
-      s := 3.14 * sqr(r);
-      writeln(r, d, s);
+      l := 2 * r * 3.14;
+      writeln(l);
      end;
     4: begin
-      r := sqrt(x / 3.14);
-      d := 2 * r;
-      l := 2 * 3.14 * r;
-      s := x;
-      writeln(r, d, l);
+      s := 3.14 * r * r;
+      writeln(s);
      end;
+  end;
 end.

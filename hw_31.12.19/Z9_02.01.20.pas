@@ -9,8 +9,9 @@ var
 begin
   readln(x);
   
-  if (x < -2) or (x > 2) then f := 2 * x
+  if (x < -2) or (x > 2) then 
+    f := 2 * x
   else
-  f := -3 * x;
+    f := -3 * x;
   writeln(f)
 end.
