@@ -16,7 +16,7 @@ begin
   for var i := 1 to N do
   begin
     factorial := factorial * i;
-    powerX := powerX * X;
+    powerX := powerX * x;
     sum := sum + powerX / factorial;
   end;
   writeln(sum)

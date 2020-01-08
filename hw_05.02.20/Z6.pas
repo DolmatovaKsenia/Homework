@@ -9,16 +9,23 @@ var
   N, factorial, sign: integer;
   
 begin
-  readln(X, N)
+  readln(X, N);
   factorial := 1;
   sign := -1;
-  sum := X;
-  powerX := X;
-  for var i := 2 to N do
+  sum := 0;
+  powerX := 1;
+  for var i := 1 to N do
   begin
     factorial := factorial * i;
     
+    if i mod 2 <> 0 then
+    begin
+      sign := sign * (-1);
+      powerX := powerX * X;
+      sum := sum + powerX / factorial * sign;
+    end;    
   end;
   
+  writeln(sum)
 end.
 

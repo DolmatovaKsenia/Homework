@@ -14,6 +14,6 @@ begin
   begin
     sign := sign * (-1);
     sum := sum + (N + 10) / 10;
-  writeln(sum);
   end;
+  writeln(sum);
 end.
