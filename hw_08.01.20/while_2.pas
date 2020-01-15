@@ -10,7 +10,7 @@ begin
   readln(A, B);
   count := 0;
   C := A;
-  while C > B do
+  while C >= B do
   begin
     C := C - B;
     count := count + 1;

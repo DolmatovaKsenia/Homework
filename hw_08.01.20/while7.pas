@@ -7,11 +7,11 @@ var
   
 begin
   readln(N);
-  K := 1;
-  while N > powerK do
+  K := 0;
+  while N >= powerK do
   begin
-   powerK := K * K;
    K := K + 1;
+   powerK := K * K;
   end;
   writeln(K)
 end.

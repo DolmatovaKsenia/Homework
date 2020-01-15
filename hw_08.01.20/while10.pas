@@ -2,16 +2,17 @@
 //тором выполняется неравенство 3^K < N.
 
 var
-  N, K, powerK: integer;
+  N, K, powerK, number: integer;
   
 begin
   readln(N);
   K := 1;
   powerK := 3;
-  while N > 3 * powerK do
+  while N > powerK do
   begin
-  powerK := powerK * K;
-  K := K + 1;
+    powerK := powerK * 3;
+    K := K + 1;
   end;
-  writeln(K)
+  
+  writeln(K - 1)
 end.

@@ -12,12 +12,10 @@ var
 begin
   readln(N);
   factorial := 1;
-  while (N > 2) or (N = 2) do
+  while N >= 2 do
   begin
     factorial := factorial * N;
     N := N - 2;
   end;
   writeln(factorial)
-    
-  
 end.

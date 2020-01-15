@@ -8,11 +8,11 @@ var
 begin
   writeln('Введите число');
   readln(N);
-  while N > 1 do
-    begin
-    write(' ', N mod 10);
+  while N > 0 do
+  begin
+    write(' ' , N mod 10);
     N := N div 10;
-    end;
+  end;
     writeln(' - число')
 end.
 

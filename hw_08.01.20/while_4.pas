@@ -2,15 +2,17 @@
 //вести True, если не является — вывести False.
 
 var
-  N: integer;
+  N, number: integer;
   
 begin
   readln(N);
-  N := N;
-  while (N > 3)or (N = 3) do
-    N := N div 3;
-    if N mod 3 = 0 then
+  number := N;
+  
+  while number mod 3 = 0 do
+    number := number div 3;
+    
+  if (number = 1) and (N >= 3) then
     write('True')
-    else
+  else
     write('False')
 end.

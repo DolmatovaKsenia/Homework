@@ -9,13 +9,12 @@ begin
   readln(N);
   sum := 0;
   K := 0;
-  while (sum < N) or (sum = N) do
-    begin
-    sum := sum + 1;
+  while sum < N do
+  begin
     K := K + 1;
-    end;
-    writeln(K,' ',sum)
-    
+    sum := sum + K;
+  end;
   
+  writeln(K, ' ', sum)
   
 end.
