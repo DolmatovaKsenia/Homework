@@ -4,21 +4,24 @@
 
 var
   N, digit: integer;
-  expression: boolean;
+  expressionContaintsTwo: boolean;
   
 begin
   readln(N);
+  expressionContaintsTwo := false;
+  
   while N > 0 do 
   begin
-   digit := N mod 10; 
-   N := N div 10;
-   if digit = 2 then
-   begin
-     write('True');
-     break;
-   end
-   else 
-     write('False')
+    digit := N mod 10;
+    
+    if digit = 2 then
+    begin
+      expressionContaintsTwo := true;
+      break;
+    end;
+    
+    N := N div 10;
   end;
   
+  writeln(expressionContaintsTwo)  
 end.
