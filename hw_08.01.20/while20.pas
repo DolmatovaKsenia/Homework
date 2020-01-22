@@ -13,9 +13,12 @@ begin
   digit := N mod 10; 
   N := N div 10;
   if digit = 2 then
+  begin
     break;
-  write('True');
-    else write ('False')
-  end;
+    write('True');
+  end
+  else 
+    write ('False')
+ end;
   
 end.
