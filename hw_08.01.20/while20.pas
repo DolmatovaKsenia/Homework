@@ -8,17 +8,17 @@ var
   
 begin
   readln(N);
- while N > 0 do 
- begin
-  digit := N mod 10; 
-  N := N div 10;
-  if digit = 2 then
+  while N > 0 do 
   begin
-    break;
-    write('True');
-  end
-  else 
-    write ('False')
- end;
+   digit := N mod 10; 
+   N := N div 10;
+   if digit = 2 then
+   begin
+     write('True');
+     break;
+   end
+   else 
+     write('False')
+  end;
   
 end.
