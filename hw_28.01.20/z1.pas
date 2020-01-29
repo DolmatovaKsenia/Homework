@@ -7,7 +7,7 @@ var
   arr: array [1..size] of integer;
  
   
-  begin
+begin
   for var i := 1 to size do
     arr[i] := random(-9, 9);
   
@@ -15,21 +15,17 @@ var
   for var i := 1 to size do
     write(arr[i], ' ');
   
- 
-  var i:=0;
-  while (i <= size) do
+  writeln();
+  
+  for var i := 1 to size do
   begin
-  i := i + 2;
-  writeln(arr[i]);
+    if i mod 2 = 0 then
+      write(arr[i], ' ');
   end;
- 
-  i:=1;
-  while (i <= size) do
+  
+  for var i := 1 to size do
   begin
-  writeln(arr[i],' ');
-  i:=i+2;
+    if i mod 2 = 1 then
+      write(arr[i], ' ');
   end;
 end.
-
-
-НЕ ПОЛУЧИЛОСЬ
