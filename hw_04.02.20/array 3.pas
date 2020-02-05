@@ -5,18 +5,18 @@ const
   
 var
   arr: array[1..size] of integer;
-  A, D, factor: integer;
+  firstElement, denominator, factor: integer;
   
 begin
-  readln(A);
-  readln(D);
+  readln(firstElement);
+  readln(denominator);
   factor := 1;
-  arr[1] := A;
+  arr[1] := firstElement;
   for var i := 2 to size do 
-    begin
-    arr[i] := A + factor * D;
+  begin
+    arr[i] := firstElement + factor * denominator;
     factor := factor + 1;
-    end;
-    writeln(arr)
+  end;
+  writeln(arr)
 end.
   

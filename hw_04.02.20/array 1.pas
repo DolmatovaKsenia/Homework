@@ -4,12 +4,16 @@ const
 
 var
   arr: array[1..size] of integer;
-  factor, elem: integer;
+  currentElement: integer;
   
 begin
+  currentElement := 1;
+  
   for var i := 1 to size do 
   begin
-    factor
-    arr[i] := elem + factor * 2;
+    arr[i] := currentElement;
+    currentElement += 2;
+  end;
+  
   writeln(arr)
 end.
