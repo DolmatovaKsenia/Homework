@@ -10,14 +10,12 @@ var
 begin
   sum := 0;
   for var i := 1 to size do
-    begin 
+  begin 
     arr[i] := random(-10, 10);
-    if arr[i] mod 2 = 0 then
+    if (arr[i] mod 2 = 0) and (i mod 2 <> 0 ) then
       sum := sum + arr[i];
-    if i mod 2 <> 0 then
-      writeln(arr[i]);
-    end;
-    write(arr);
-    writeln();
-    writeln(sum);
+    write(arr[i], ' ');
+  end;
+  writeln();
+  writeln(sum)
 end.

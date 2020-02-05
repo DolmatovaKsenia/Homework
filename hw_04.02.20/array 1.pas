@@ -4,9 +4,12 @@ const
 
 var
   arr: array[1..size] of integer;
+  factor, elem: integer;
   
 begin
   for var i := 1 to size do 
-    arr[i] := random(-10, 10);
-    writeln(arr)
+  begin
+    factor
+    arr[i] := elem + factor * 2;
+  writeln(arr)
 end.

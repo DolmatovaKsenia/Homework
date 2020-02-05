@@ -4,25 +4,19 @@ const
   size = 10;
   
 var
-  arr1: array[1..size] of integer;
-  arr2: array[1..size] of integer;
+  arr: array[1..size] of integer;
   
 begin
   for var i := 1 to size do
-    begin 
-    arr1[i] := random(-10, 10);
-    arr2[size + 1 - i] := arr1[i];
-    end;
-  
-  for var i := 1 to size do 
-  begin
-    write(arr1[i], ' ')
+  begin 
+    arr[i] := random(-10, 10);
+    write(arr[i], ' ');
   end;
-  
+    
   writeln();
   
-  for var i := 1 to size do
+  for var i := size downto 1 do
   begin
-    write(arr2[i], ' ')
+    write(arr[i], ' ')
   end;
   end.
