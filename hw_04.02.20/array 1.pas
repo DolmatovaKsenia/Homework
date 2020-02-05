@@ -4,9 +4,16 @@ const
 
 var
   arr: array[1..size] of integer;
+  currentElement: integer;
   
 begin
+  currentElement := 1;
+  
   for var i := 1 to size do 
-    arr[i] := random(-10, 10);
-    writeln(arr)
+  begin
+    arr[i] := currentElement;
+    currentElement += 2;
+  end;
+  
+  writeln(arr)
 end.
