@@ -4,21 +4,30 @@
 var 
   B, number: real;
   N: integer;
-  first: boolean;
+  firstGreaterThanB: boolean;
   
 begin
   readln(B);
   readln(N);
-  first := false;
+  firstGreaterThanB := false;
   for var i := 1 to N do
-    begin
+  begin
     readln(number);
-    if (B <= number) and (first = false) then
+    
+    if (number >= B) and (not firstGreaterThanB) then
     begin
-      writeln(B);
-      first := true;
-      end;
+      writeln('Number: ', B);   
+      writeln('Number: ', number);
+      firstGreaterThanB := true;
+    end
+    else
+    begin
+      writeln('Number: ', number);
     end;
-  if first = false then
-    write(B) 
+  end;
+  
+  if not firstGreaterThanB then
+  begin
+    writeln('Number: ', B);
+  end;
 end.
