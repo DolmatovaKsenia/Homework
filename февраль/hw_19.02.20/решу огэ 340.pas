@@ -7,12 +7,15 @@ var
   number, sum: integer;
   
 begin
-  readln(number);
   sum := 0;
+  number := 1;
+  
   while number <> 0 do
   begin
+    readln(number);
     if (number mod 6 = 0) and (number mod 10 = 4) then
-      sum := sum + 1;
+      sum += 1;
   end;
+  
   writeln(sum)
 end.

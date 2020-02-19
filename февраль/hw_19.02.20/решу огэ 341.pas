@@ -12,18 +12,14 @@ begin
   min2 := 30001; 
   max := -30001; 
   max2 := -30001;
-  readln(number);
-  if (number = 0) then 
-  begin
-    min := 0;
-    min2 := 0;
-    max := 0;
-    max2 := 0;
-  end;
+  
   while true do 
   begin 
-    if (number = 0) then break;
-    if (number <= min) and (number <> 0) then 
+    readln(number);
+  
+    if (number = 0) then 
+      break;
+    if (number <= min) then 
     begin 
       min2 := min; 
       min := number; 
@@ -38,12 +34,8 @@ begin
     end 
     else if (number >= max2) then 
       max2 := number; 
-            
-    readln(number);
-            
-    if number = 0 then 
-      break;
   end; 
-  writeln(max+max2);
-  writeln(min+min2)
+  
+  writeln(max + max2);
+  writeln(min + min2)
 end.
