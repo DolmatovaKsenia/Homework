@@ -5,22 +5,21 @@ const
   
 var
   arr: array[1..size] of integer;
-  even, min:integer;
+  min: integer;
   
 begin
+  min := integer.MaxValue;
   for var i := 1 to size do
-    begin
+  begin
     arr[i] := random(-10, 10);
+  end;
+  
     
-  if i mod 2 = 0 then
-    begin
-      even := arr[i];
-      min := arr[i];
-    end;
-    
-  if arr[i] < min then
-    min := arr[i];
-    end;
+  for var i := 1 to size do
+  begin
+   if (arr[i] < min) and ( i mod 2 = 0 ) then
+     min := arr[i];
+  end;
     
   writeln(arr);
   writeln(min)
