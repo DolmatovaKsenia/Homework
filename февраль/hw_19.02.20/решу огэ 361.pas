@@ -13,7 +13,7 @@ var
 begin
   readln(N);
   max := 0;
-  expression := False;
+  expression := false;
   for var i := 1 to N do
   begin
     readln(number);
@@ -25,8 +25,8 @@ begin
     expression := true; 
   end;
 
-writeln(max);
-  if expression = true then
+  writeln(max);
+  if expression then
     writeln ('YES')
   else 
     writeln('NO')

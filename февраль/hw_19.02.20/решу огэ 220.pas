@@ -7,14 +7,15 @@ var
   
 begin
   readln(N);
+  min := 30001;
+  
   for var i := 1 to N do
   begin
     writeln('Введите число');
     readln(number);
-    if number mod 10 = 6 then
-    min := number;
+    
     if (number mod 10 = 6) and (number < min) then
-      min:= number;
+      min := number;
   end;
   writeln(min)
 end.
