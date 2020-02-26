@@ -5,31 +5,25 @@
 
 var
   N: integer;
-  number, number1, lastNumber: real;
+  number, previousNumber: real;
   expressionAboutSequence: boolean;
   
 begin
   readln(N);
   expressionAboutSequence := true;
-  readln(number1);
+  readln(previousNumber);
+  
   for var i := 2 to N do
   begin
     readln(number);
     
-    if number1 < number then
-      expressionAboutSequence := true
-    else
-      begin
+    if number <= previousNumber then
+    begin
       expressionAboutSequence := false;
-      lastNumber := number;
-      end;
-      
-    readln(number);
+    end;
     
-    if (lastNumber < number) and (expressionAboutSequence = true) then
-      expressionAboutSequence := true
-    else
-      expressionAboutSequence := false
+    previousNumber := number;    
   end;
-writeln(expressionAboutSequence)
+  
+  writeln(expressionAboutSequence)
 end.

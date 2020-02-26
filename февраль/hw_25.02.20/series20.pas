@@ -3,7 +3,7 @@
 // Вывести те элементы в наборе, которые меньше своего правого соседа, и количество K таких элементов.
 
 var 
-  N, number, rightNeighbour, K, numberBefore: integer;
+  N, number, K, numberBefore: integer;
   
 begin
   readln(N);
@@ -15,10 +15,9 @@ begin
     readln(number);
     if numberBefore < number then
     begin
-      rightNeighbour := numberBefore;
+      writeln(numberBefore);
       numberBefore := number;
       K += 1;
-      writeln(rightNeighbour);
     end;
   end;
   writeln(K)
