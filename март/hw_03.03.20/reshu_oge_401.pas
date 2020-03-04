@@ -23,7 +23,7 @@ begin
       expression := true;
   end;
  averageSpeed := sum / N;
- writeln(averageSpeed);
+ writeln(averageSpeed:1:3);
  if expression then
    writeln('YES')
  else

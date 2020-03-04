@@ -12,6 +12,8 @@ begin
   begin
     if number > K then
       count += 1;
+      
+    readln(number);
   end;
   writeln(count)
 end.

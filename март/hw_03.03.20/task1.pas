@@ -3,16 +3,18 @@
 // ученику, чтобы его итоговая оценка по информатике была не меньше 4 баллов.
 
 var
-  a, b, c, d, count, total: real;
+  a, b, c, minIntGreaterThanD: integer;
+  d: real;
   
 begin
   readln(a);
   readln(b);
   readln(c);
-  count := a + b + c + d;
-  total := (2 * a + 3 * b + 4 * c + 5 * d) / count;
-  total := 3.5;
+  minIntGreaterThanD := 1;
   d := (1.5 * a + 0.5 * b - 0.5 * c) / 1.5;
-  d := round(d);
-  writeln(d);
+  
+  while minIntGreaterThanD < d do
+    minIntGreaterThanD += 1;  
+  
+  writeln(minIntGreaterThanD);
 end.

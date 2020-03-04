@@ -3,19 +3,19 @@
 // чисел от a до b, включительно.
 
 var
-  a, b, k, count, x, y: integer;
+  a, b, k, x1, x2, y1, y2: integer;
   
 begin
-  readln(a);
-  readln(b);
-  readln(k);
-  count := 0;
-  for var i := a to b do
+  readln(a, b, k);
+  
+  x1 := 1;
+  y1 := 1;
+  x2 := 1;
+  y2 := 1;
+  
+  while x1 * x1 < a do
   begin
-  x := random(a, b);
-  y := random(a, b);
-  if abs(x * x - y * y * y) <= k then
-    count += 1;
+    x1 += 1;
   end;
-  writeln(count)
+  
 end.
