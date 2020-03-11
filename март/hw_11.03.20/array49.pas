@@ -1,4 +1,4 @@
-﻿// array 49
+﻿// array 49 (ксюшина интерпретация)
 const
   size = 5;
 
@@ -7,19 +7,18 @@ var
   count, prev: integer; 
   
 begin 
-  count := 0;
-  for var i := 1 to size do
+  count := 1;
+  readln(prev);
+  
+  for var i := 1 to size - 1 do
   begin
     readln(arr[i]);
     count += 1;
-    prev := arr[i];
-    readln(arr[i]);
       if arr[i] - prev <> 1 then
       begin
-        writeln('Элемент нарушивший последлвательность ');
+        writeln('Элемент нарушивший последовательность ');
         write(count)
       end;
-     if not arr[i] - prev = 1 then 
-       writeln('0');
+    prev := arr[i];
   end;
 end.
