@@ -16,17 +16,17 @@ begin
     
   for var i := 1 to size do
   begin
-    if arr2[i] = 0 then
-    begin
-      arr2[i] += 1;
-      count += 1;
-    end;
-    if arr2[i] = 1 then
+    if arr2[arr1[i]] = 1 then
     begin
       writeln(count);
       break
     end
     else
       writeln('0');
+    if arr2[arr1[i]] = 0 then
+    begin
+      arr2[arr1[i]] += 1;
+      count += 1;
     end;
+  end;
 end.
