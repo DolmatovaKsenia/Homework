@@ -5,17 +5,18 @@ const
   
 var
   arr: array[1..size] of integer;
-  count, first: integer;
+  count, prev: integer;
   
 begin
   count := 0;
-  readln(first);
+  readln(prev);
+  arr[1] := prev;
   for var i := 2 to size do 
   begin
     readln(arr[i]);
-    if first <> arr[i] then 
+    if prev <> arr[i] then 
       count += 1;
-    first := arr[i];
+    prev := arr[i];
   end;
   writeln(count)
 end.

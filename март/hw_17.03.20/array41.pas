@@ -8,18 +8,22 @@ var
   
 begin
   readln(prev);
-  sumMax := 0;
+  arr[1] := prev;
+  sumMax := integer.MinValue;
   count1 := 0;
   count2 := 1;
+  
   for var i := 2 to size do
   begin
     readln(arr[i]);
     sum := prev + arr[i];
     if sum > sumMax then
+    begin
       sumMax := sum;
-    count2 += 1;
-    count1 += 1;
+      count1 := i - 1;
+      count2 := i;
+    end;
     prev := arr[i];
   end;
-  writeln(count1, ' ', count2)
+  writeln(arr[count1], ' ', arr[count2])
 end.
