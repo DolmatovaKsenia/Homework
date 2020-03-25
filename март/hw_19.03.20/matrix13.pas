@@ -16,11 +16,19 @@ begin
     end;
   end;
   
-  for var y := 1 to rows do
+  for var i := 1 to rows do
   begin
-   for var i := 1 to columns - y + 1 do 
-     write(arr[y,i], ' ');
-    for var j := y + 1 to columns do
-      write(arr[j,columns - y + 1], ' ');
-   end;
+    for var j := 1 to columns do
+    begin
+      write(arr[i,j], ' ');
+    end;
+    writeln();
+  end;
+  
+  
+  for var i := 1 to rows do
+  begin
+  
+  
+  end;
 end.

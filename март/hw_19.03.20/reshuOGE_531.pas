@@ -13,7 +13,7 @@ begin
   while number <> 0 do 
   begin
     count += 1;
-    if (number > 0) and (number mod 2 = 0) then
+    if (number > 0) and (number mod 2 = 0) and (number <= 256) then
       sum += number;
     readln(number);
   end;
