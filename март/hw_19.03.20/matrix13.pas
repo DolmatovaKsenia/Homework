@@ -6,7 +6,7 @@ const
   
 var
   arr: array[1..rows,1..columns] of integer;
-  prevR, prevC: integer;
+  shift: integer;
   
 begin
   for var i := 1 to rows do
@@ -26,16 +26,21 @@ begin
     writeln();
   end;
   
-  for var i := 1 to rows + 1 do
+  writeln();  
+  shift := 0;
+  
+  for var i := 1 to rows do
   begin
-    for var j := 1 to columns do
+    for var j := 1 to columns - shift do
     begin
-    writeln(arr[1, j]);
-    prevR := rows - 1;
-    prevC := columns - 1;
-    writeln(arr[prevR,prevC]);
-    prevR -= 1;
-    prevC -= 1;
+      write(arr[shift + 1, j], ' ');
     end;
+    
+    for var j := shift + 2 to rows do
+    begin
+      write(arr[j, columns - shift], ' ');    
+    end;
+    
+    shift += 1;
   end;
 end.
