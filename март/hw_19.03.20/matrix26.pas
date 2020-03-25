@@ -1,8 +1,8 @@
 ﻿// matrix 26
 
 const
-  rows = 6;
-  columns = 7;
+  rows = 3;
+  columns = 5;
 
 var
   arr: array[1..rows,1..columns] of integer;
@@ -16,21 +16,35 @@ begin
   begin
     for var j := 1 to columns do 
     begin
-      arr[i,j] := random(10,30);
+      arr[i,j] := random(1,9);
     end;
   end;
+  
+  for var i := 1 to rows do
+  begin
+    for var j := 1 to columns do 
+    begin
+      write(arr[i,j], ' ');
+    end;
+    writeln();
+  end;
+  
+  writeln();
   
   for var j := 1 to columns do 
   begin
     for var i := 1 to rows do
     begin
-      product *= arr[i,j];
-      if product < min then
-      begin
-        min := product;
-        count += 1;
-      end;
+      product *= arr[i, j];
     end;
+    
+    if product < min then
+    begin
+      min := product;
+      count := j;
+    end;
+    
+    product := 1;
   end;
   writeln(min);
   writeln(count)

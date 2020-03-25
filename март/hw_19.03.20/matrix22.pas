@@ -5,8 +5,8 @@ const
   columns = 6;
   
 var
-  arr: array[1..rows,1..columns] of integer;
-  sum: integer;
+  arr: array[1..rows, 1..columns] of integer;
+  sum, countColumns: integer;
   
 begin
   sum := 0;
@@ -14,14 +14,29 @@ begin
   begin
     for var j := 1 to columns do
     begin
-      readln(arr[i,j]);
+      arr[i,j] := random(0, 9);
     end;
+  end;
+  
+  for var i := 1 to rows do
+  begin
     for var j := 1 to columns do
-    while 2 * j <= columns do
     begin
-      for var y := 1 to rows do
-        sum += arr[i,j];
-      writeln(sum);
+      write(arr[i,j], ' ');
     end;
-   end;
+    writeln();
+  end;
+  
+  writeln();
+    
+  countColumns := 1;
+  
+  while 2 * countColumns <= columns do
+  begin
+    for var y := 1 to rows do
+      sum += arr[y, countColumns * 2];
+    writeln(sum);
+    sum := 0;
+    countColumns += 1;
+  end;
 end.
