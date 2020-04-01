@@ -9,6 +9,7 @@ var
 begin
   readln(a);
   readln(b);
+  count := 0;
   for var i := a to b do
   begin
     if i mod 2 = 0 then
