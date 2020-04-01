@@ -15,12 +15,17 @@ begin
   while number <> 0 do
   begin
     if number mod 8 = 0 then
+    begin
       count += 1;
       sum += number;
+    end;
     readln(number);
   end;
-  srar := sum / count;
-  writeln(srar:1:1);
-  if count = 0 then
-    writeln('Sorry, but NO');
+  if count > 0 then 
+  begin
+    srar := sum / count;
+    writeln(srar);
+  end
+  else
+    writeln('NO');
 end.
