@@ -2,6 +2,9 @@
 //
 
 #include <iostream>
+#include <cmath>
+
+using namespace std;
 
 // Дано трехзначное число. Вывести число, полученное при перестановке цифр сотен и десятков исходного числа
     // (например, 123 перейдет в 213).
@@ -13,7 +16,8 @@ void task1()
     int digit1 = number / 100;
     int digit2 = number / 10 % 10;
     int digit3 = number % 10;
-    std::cout << "Number is " << digit3 << digit2 << digit1 << std::endl;
+    int result = digit3 * 100 + digit2 * 10 + digit1;
+    std::cout << "Number is " << result << std::endl;
 }
 
 // С начала суток прошло N секунд (N — целое). Найти количество полных часов, прошедших с начала суток.
@@ -55,11 +59,7 @@ void task4()
     std::cout << "Input number C" << std::endl;
     int C = 0;
     std::cin >> C;
-    bool expression = 0;
-    if (A < B and B < C)
-    {
-        expression = 1;
-    }
+    bool expression = A < B && B < C;
     std::cout << expression <<  std::endl;
 }
 
@@ -72,15 +72,7 @@ void task5()
     std::cout << "Input number B" << std::endl;
     int B = 0;
     std::cin >> B;
-    bool expression = 0;
-    if (A % 2 == 1)
-    {
-        if (B % 2 == 1)
-        {
-            expression = 1;
-        }
-        
-    }
+    bool expression = A % 2 == 0 && B % 2 == 0;
     std::cout << expression << std::endl;
 }
 
@@ -97,8 +89,9 @@ void task6()
     std::cout << "Input number C" << std::endl;
     double C = 0;
     std::cin >> C;
-    bool expression = 0;
-
+    double const eps = 0.001;
+    bool expression = abs(A * A + B * B - C * C) < eps || abs(B * B + C * C - A * A) < eps 
+            || abs(A * A + C * C - B * B) < eps;
 }
 
 // Даны два числа. Вывести вначале большее, а затем меньшее из них.
@@ -147,7 +140,7 @@ void task8()
 
 }
 //Дано целое число N (> 0). Найти квадрат данного числа, используя для его вычисления следующую формулу :
-// N2 = 1 + 3 + 5 + … + (2·N – 1).
+// N^2 = 1 + 3 + 5 + … + (2·N – 1).
 // После добавления к сумме каждого слагаемого выводить текущее значение
 //суммы(в результате будут выведены квадраты всех целых чисел от 1 до N).
 
@@ -156,21 +149,19 @@ void task9()
     std::cout << "Input number" << std::endl;
     int N = 0;
     std::cin >> N;
-    for (int i = 0,)
+    int result = 0;
+
+    for (int i = 1; i < 2 * N; i += 2)
+    {
+        result += i;
+    }
+
+    cout << result << endl;
 }
+
 int main()
 {
     std::cout << "Hello World!\n";
     task8();
     return 0;
 }
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
