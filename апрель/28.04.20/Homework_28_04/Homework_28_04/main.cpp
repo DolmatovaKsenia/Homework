@@ -5,5 +5,5 @@ using namespace std;
 
 int main()
 {
-	uneven(1);
+	cout << count1() << endl;
 }
