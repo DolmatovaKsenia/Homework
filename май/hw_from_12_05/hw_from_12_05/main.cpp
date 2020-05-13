@@ -2,12 +2,15 @@
 //
 
 #include <iostream>
-#include "Homework.h"
+#include "Parabola.h"
+#include "Rectangle.h"
 
 using namespace std;
 
 int main()
 {
-    void printParabola();
+    Rectangle rec;
+    rec.createRectangle(0, 0, 0, 1, 1, 1, 1, 0);
+    cout << rec.x1 << endl;
 }
 

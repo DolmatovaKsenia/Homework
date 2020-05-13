@@ -137,11 +137,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Homework.cpp" />
-    <ClCompile Include="hw_from_12_05.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Parabola.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Homework.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="Parabola.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
