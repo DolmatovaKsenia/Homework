@@ -92,7 +92,18 @@ void Parabola::printIfAbsAIs1OrAbsBIs1(int a, int b)
 			cout << " " << c << endl;
 		}
 	}
-	
+	if (b < 0)
+	{
+		cout << a << "x^2" << " " << b << "x";
+		if (c > 0)
+		{
+			cout << " + " << c << endl;
+		}
+		else if (c < 0)
+		{
+			cout << " " << c << endl;
+		}
+	}
 }
 
 // Проверяет, принадлежит ли переданная точка параболе.
