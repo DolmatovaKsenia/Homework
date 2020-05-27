@@ -13,4 +13,8 @@ struct Parabola
 
 	// Проверяет, принадлежит ли переданная точка параболе.
 	bool pointOfParabola(int x, int y);
+
+private:
+	// Печатает параболу, когда коэффициенты a или b по модулю 1.
+	void printIfAbsAIs1OrAbsBIs1(int a, int b);
 };
