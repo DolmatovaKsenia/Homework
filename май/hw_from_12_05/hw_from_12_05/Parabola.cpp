@@ -8,7 +8,15 @@ void Parabola::printParabola()
 {
 	if (abs(a) == 1 || abs(b) == 1)
 	{
-		printIfAbsAIs1OrAbsBIs1(a, b);
+		printIfAbsAIs1OrAbsBIs1();
+	}
+	else if (b == 0 || c == 0)
+	{
+		printIfBIs0OrCIs0();
+	}
+	else
+	{
+		printCommon();
 	}
 
 	// Поправить:
@@ -18,12 +26,10 @@ void Parabola::printParabola()
 	// в виде отдельного метода)
 	// 3. Вместо 2x^2 2 должно выводиться 2x^2 + 2. (сделать в отдельном методе)
 	// Протестировать, что вывод параболы всегда работает корректно.
-
-	cout << a << "x^2 " << b << "x " << c << endl;
 }
 
 // Печатает параболу, когда коэффициенты a или b по модулю 1.
-void Parabola::printIfAbsAIs1OrAbsBIs1(int a, int b)
+void Parabola::printIfAbsAIs1OrAbsBIs1()
 {
 	if (abs(a) == 1 && abs(b) == 1)
 	{
@@ -115,4 +121,134 @@ bool Parabola::pointOfParabola(int x, int y)
 	}
 	
 	return false;
+}
+
+// Если при x или свободном члене коэффициент 0, то выводим НИЧЕГО, а не 0x.
+void Parabola::printIfBIs0OrCIs0()
+{
+	if (a > 0)
+	{
+		cout << a << "x^2";
+
+		if (b > 0)
+		{
+			cout << " + " << b << "x";
+		}
+		if (b == 1)
+		{
+			cout << "+ x";
+		}
+		if (b == 0)
+		{
+			cout << "";
+		}
+		if (b < 0)
+		{
+			cout << " " << b << "x";
+		}
+
+		if (c > 0)
+		{
+			cout << " + " << c << endl;
+		}
+		if (c == 0)
+		{
+			cout << "" << endl;
+		}
+		if (c < 0)
+		{
+			cout << " " << c << endl;
+		}
+	}
+
+	if (a == 0)
+	{
+		cout << "";
+
+		if (b > 0)
+		{
+			cout << " + " << b << "x";
+		}
+		if (b == 1)
+		{
+			cout << "+ x";
+		}
+		if (b == 0)
+		{
+			cout << "";
+		}
+		if (b < 0)
+		{
+			cout << " " << b << "x";
+		}
+
+		if (c > 0)
+		{
+			cout << " + " << c << endl;
+		}
+		if (c == 0)
+		{
+			cout << "" << endl;
+		}
+		if (c < 0)
+		{
+			cout << " " << c << endl;
+		}
+	}
+
+	if (a < 0)
+	{
+		cout << a << "x^2";
+
+		if (b > 0)
+		{
+			cout << " + " << b << "x";
+		}
+		if (b == 1)
+		{
+			cout << "+ x";
+		}
+		if (b == 0)
+		{
+			cout << "";
+		}
+		if (b < 0)
+		{
+			cout << " " << b << "x";
+		}
+
+		if (c > 0)
+		{
+			cout << " + " << c << endl;
+		}
+		if (c == 0)
+		{
+			cout << "" << endl;
+		}
+		if (c < 0)
+		{
+			cout << " " << c << endl;
+		}
+	}
+}
+
+void Parabola::printCommon()
+{
+	cout << a << "x^2 ";
+	if (b > 0)
+	{
+		cout << "+ " << b << "x";
+	}
+	else
+	{
+		cout << b << "x";
+	}
+	if (c > 0)
+	{
+		cout << " + " << c << endl;
+	}
+	else
+	{
+		cout << c << endl;
+	}
 }

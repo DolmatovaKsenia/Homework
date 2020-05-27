@@ -9,8 +9,14 @@ using namespace std;
 
 int main()
 {
-    Rectangle rec;
-    rec.createRectangle(0, 0, 0, 1, 1, 1, 1, 0);
-    cout << rec.x1 << endl;
+    Parabola p;
+    p.a = 2;
+    p.b = -3;
+    p.c = 3;
+
+    p.printParabola(); 
+    // F11 - шаг с заходом в подпрограмму
+    // F10 - шаг без захода в подпрограмму
+    // F5 - выполнение программы до точки останова
 }
 
