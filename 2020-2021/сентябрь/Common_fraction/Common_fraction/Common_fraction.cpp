@@ -6,77 +6,86 @@
 
 using namespace std;
 
-class Common_fraction
+class CommonFraction
 {
-public:
-     int x = 1;
-     int y = 1;
+	int x = 1;
+	int y = 1;
 
-	 void setX()
+	int gcd(int x, int y)
+	{
+		if (y == 0)
+		{
+			return x;
+		}
+
+		return gcd(y, x % y);
+	}
+
+	int lcm(int x, int y)
+	{
+		int g = gcd(x, y);
+		return x * y / g;
+	}
+
+public:
+
+	 void setX(int x)
+
 	 {
-		 cin >> x;
+		 this->x = x;
 	 }
 
-	void setY()
+	void setY(int y)
 	{
-		cin >> y;
 		while (y == 0)
 		{
 			cout << "Denominator can't be 0" << endl;
 			cin >> y;
 		}
-	}
 
-	int gcd(int x, int y)
-	{
-		if (x == 0)
-		{
-			return y;
-		}
-		return gcd(y, x % y);
+		this->y = y;
 	}
 	
-	int reduceFraction()
+	void reduceFraction()
 	{
 		int nod = gcd(x, y);
-		int x2 = x / nod;
-		int y2 = y / nod;
-		return x2, y2;
+		x /= nod;
+		y /= nod;
 	}
 
-	int addition()
+	void addition(int numerator, int denominator)
 	{
-		int value = 0;
-		cin >> value;
-		int answer = x / y + value;
-		return answer;
+		int nok = lcm(y, denominator);
+		int factor1 = nok / y;
+		int factor2 = nok / denominator;
+		int numeratorNew = numerator * factor2 + x * factor1;
+		cout << numeratorNew << "/" << nok << endl;
 	}
 
-	int subtraction()
+	void subtraction(int numerator, int denominator)
 	{
-		int value = 0;
-		cin >> value;
-		int answer = x / y - value;
-		return answer;
+		int nok = lcm(y, denominator);
+		int factor1 = nok / y;
+		int factor2 = nok / denominator;
+		int numeratorNew = x * factor1 - numerator * factor2;
+		cout << numeratorNew << "/" << nok << endl;
 	}
 	
-	int asterisk()
+	void multiplication(int numerator, int denominator)
 	{
-		int value = 0;
-		cin >> value;
-		int answer = x / y * value;
-		return answer;
+		int numeratorNew = x * numerator;
+		int denominatorNew = y * denominator;
+		cout << numeratorNew << "/" << denominatorNew << endl;
 	}
 
-	int multiplication()
+	void division(int numerator, int denominator)
 	{
-		int value = 0;
-		cin >> value;
-		int answer = x / y / value;
-		return answer;
+		int numeratorNew = x * denominator;
+		int denominatorNew = y * numerator;
+		cout << numeratorNew << "/" << denominatorNew << endl;
 	}
 
-	void fraction()
+	void decimalFraction()
 	{
 		cout << x / y << endl;
 	}
@@ -91,20 +100,25 @@ public:
 		return y;
 	}
 
+	void printFraction()
+	{
+		cout << x << "/" << y << endl;
+	}
+
 };
 
 int main()
 {
+	// F11 - с заходом
+	// F10 - без захода
+	// shift + F11 - шаг с выходом
+
+	CommonFraction fraction;
+	fraction.setX(4);
+	fraction.setY(6);
+	fraction.reduceFraction();
+	fraction.printFraction();
+	fraction.subtraction(1, 2);
+
 	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
