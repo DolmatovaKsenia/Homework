@@ -109,16 +109,48 @@ public:
 
 int main()
 {
-	// F11 - с заходом
-	// F10 - без захода
-	// shift + F11 - шаг с выходом
+	setlocale(LC_ALL, "Russian");
+
+	// 1 - предлагают ввести числ и знам дроби
+	// 2 - значение дроби выводитяся на консоль
+	// 3 - предлагают ввести числ и знам новой дроби (сложение)
+	// ...
+	//
 
 	CommonFraction fraction;
-	fraction.setX(4);
-	fraction.setY(6);
-	fraction.reduceFraction();
-	fraction.printFraction();
-	fraction.subtraction(1, 2);
+
+	int number = 0;
+
+	while (true)
+	{
+		cout << "Нажмите 0, чтобы выйти" << endl;
+		cout << "Нажмите 1, чтобы задать числитель и знаменатель дроби" << endl;
+
+		cin >> number;
+
+		switch (number)
+		{
+		case 0:
+			return 0;
+		case 1:
+		{
+			int numerator = 0;
+			int denominator = 0;
+			cout << "Введите числитель дроби: ";
+			cin >> numerator;
+			cout << "Введите знаменатель дроби: ";
+			cin >> denominator;
+			fraction.setX(numerator);
+			fraction.setY(denominator);
+			fraction.reduceFraction();
+			fraction.printFraction();
+			break;
+		}
+		default:
+			cout << "\nБыло введено некорректное значение" << endl;
+			break;
+		}
+	}
 
 	return 0;
 }
